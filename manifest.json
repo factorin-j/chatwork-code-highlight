@@ -1,21 +1,26 @@
 {
-  "manifest_version": 2,
-  "name": "ChatWork Code Highlight!",
-  "version": "1.0.0",
-  "description": "ChatWork Code Highlight!",
-  "permissions": [
-    "https://kcw.kddi.ne.jp/*",
-    "tabs"
-  ],
-
-  "short_name": "ChatWork Code",
-  "content_scripts": [
-    {
-      "matches": ["https://kcw.kddi.ne.jp/*"],
-      "js": ["js/extension.js"],
-      "run_at": "document_end"
-    }
-  ],
-
-  "web_accessible_resources": ["js/app.js"]
+    "manifest_version": 2,
+    "name": "ChatWork Code Highlight!",
+    "version": "1.0.1",
+    "description": "ChatWork Code Highlight!",
+    "icons": {
+        "128": "icons/128.png",
+        "48": "icons/48.png",
+        "16": "icons/16.png"
+    },
+    "permissions": [
+        "https://kcw.kddi.ne.jp/*",
+        "tabs"
+    ],
+    "short_name": "ChatWork Code",
+    "content_scripts": [
+        {
+            "matches": ["https://kcw.kddi.ne.jp/*"],
+            "js": ["js/extension.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        "js/app.js"
+    ]
 }
