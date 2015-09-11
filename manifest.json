@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "ChatWork Code Highlight!",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "description": "ChatWork Code Highlight!",
     "icons": {
         "128": "icons/128.png",
@@ -10,17 +10,20 @@
     },
     "permissions": [
         "https://kcw.kddi.ne.jp/*",
+        "https://www.chatwork.com/*",
         "tabs"
     ],
-    "short_name": "ChatWork Code",
+    "short_name": "CW Code Highlight",
     "content_scripts": [
         {
-            "matches": ["https://kcw.kddi.ne.jp/*"],
+            "matches": ["https://kcw.kddi.ne.jp/*", "https://www.chatwork.com/*"],
             "js": ["js/extension.js"],
             "run_at": "document_end"
         }
     ],
     "web_accessible_resources": [
-        "js/app.js"
+        "js/app.js",
+        "js/highlight.min.js",
+        "css/github.min.css"
     ]
 }
