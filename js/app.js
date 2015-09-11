@@ -1,11 +1,24 @@
+(function () {
+    'use strict';
 
-//noinspection JSCheckFunctionSignatures
-$(document).ready(function() {
-    setInterval(function() {
-        $('code.chatCode').each(function(i, block) {
-            if (!$(block).hasClass('hljs')) {
-                hljs.highlightBlock(block);
-            }
+    var doRenderChatCode = function (timeline) {
+        var $timeline = $('<div></div>').html(timeline);
+        var $messages = $timeline.find('.chatTimeLineMessage');
+
+        if (!$messages.length) {
+            return;
+        }
+
+        $messages.find('code.chatCode').each(function (i, block) {
+            hljs.highlightBlock(block);
         });
-    }, 100);
-});
+
+        return $timeline.html();
+    };
+
+    var renderTimeLine = TimeLineView.prototype.renderTimeLine;
+    TimeLineView.prototype.renderTimeLine = function (a, b) {
+        b = doRenderChatCode(b);
+        renderTimeLine.apply(TimeLineView, [a, b]);
+    };
+})();
