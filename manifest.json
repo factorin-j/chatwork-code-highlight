@@ -1,18 +1,13 @@
 {
     "manifest_version": 2,
     "name": "ChatWork Code Highlight!",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "ChatWork Code Highlight!",
     "icons": {
         "128": "icons/128.png",
         "48": "icons/48.png",
         "16": "icons/16.png"
     },
-    "permissions": [
-        "https://kcw.kddi.ne.jp/*",
-        "https://www.chatwork.com/*",
-        "tabs"
-    ],
     "short_name": "CW Code Highlight",
     "content_scripts": [
         {

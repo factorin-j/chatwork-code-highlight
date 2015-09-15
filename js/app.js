@@ -1,10 +1,9 @@
 (function () {
     'use strict';
 
-    var doRenderChatCode = function (timeline) {
-        var $timeline = $('<div></div>').html(timeline);
+    function highlight(timeline) {
+        var $timeline = $('<div>').html(timeline);
         var $messages = $timeline.find('.chatTimeLineMessage');
-
         if (!$messages.length) {
             return;
         }
@@ -14,11 +13,11 @@
         });
 
         return $timeline.html();
-    };
+    }
 
     var renderTimeLine = TimeLineView.prototype.renderTimeLine;
     TimeLineView.prototype.renderTimeLine = function (a, b) {
-        b = doRenderChatCode(b);
+        b = highlight(b);
         renderTimeLine.apply(TimeLineView, [a, b]);
     };
 })();
